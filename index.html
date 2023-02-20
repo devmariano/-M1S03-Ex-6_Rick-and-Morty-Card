@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty Card</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <h1>Rick and Morty Card</h1>
+    <div class="row">
+    <div class="card default">
+      <img id="image" src="" alt="Imagem do Personagem">
+      <h2 id="name"></h2>
+      <p id="status"></p>
+      <p id="species"></p>
+      <p id="origin"></p>
+    </div>
+
+    <script>
+      const characterId = 1; // substitua por qualquer número de personagem desejado
+
+      fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("image").src = data.image;
+          document.getElementById("name").innerText = data.name;
+          document.getElementById("status").innerText = `Status: ${data.status}`;
+          document.getElementById("species").innerText = `Espécie: ${data.species}`;
+          document.getElementById("origin").innerText = `Origem: ${data.origin.name}`;
+        })
+        .catch(error => console.error(error));
+    </script>
+  </body>
+</html>
