@@ -28,6 +28,7 @@
       fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
         .then(response => response.json())
         .then(data => {
+          console.log(data);
           document.getElementById("image").src = data.image;
           document.getElementById("name").innerText = data.name;
           document.getElementById("status").innerText = `Status: ${data.status}`;

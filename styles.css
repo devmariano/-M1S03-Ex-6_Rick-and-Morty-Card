@@ -25,12 +25,12 @@ body {
 }
 
 .card p {
-  color: #a3a5ae;
+  color: #7f8188;
   font-size: 16px;
 }
 
 .default {
-  border-left: 3px solid #4895ff;
+  border-top: 50px solid #6fa8f8;
 }
 
 #image {
